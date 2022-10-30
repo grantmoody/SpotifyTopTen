@@ -1,6 +1,5 @@
 import './App.css';
 import InitialBody from './InitialBody';
-import TutorialBody from './TutorialBody';
 import FinalBody from './FinalBody';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
@@ -12,16 +11,17 @@ function App() {
   console.log(tracks)
   return (
     <div className="App">
+      <br/>
       <h1 className="center-content">
         Spotify Top Ten Songs And Artist
       </h1>
+      <br/>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<InitialBody settracks = {settracks} setartists = {setartists} setusersearched = {setusersearched}/>}></Route>
-          <Route path='/TutorialBody' element={<TutorialBody/>}></Route>
+          <Route path='/finalbody' element={<FinalBody/>}></Route>
         </Routes>
       </BrowserRouter>
-      {usersearched? <FinalBody tracks = {tracks} artists = {artists}/>:null}
     </div>
   );
 }
